@@ -16,9 +16,9 @@ class Recipe extends Model
         $array = $this->toArray();
 
         return [
-            'id' => $array['id'],
-            'title' => $array['title'],
-            'body' => $array['body']
+            'id'   => $this->getKey(),
+            'title' => $this->title,
+            'body' => $this->body
         ];
     }
 }
