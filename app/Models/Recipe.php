@@ -10,4 +10,15 @@ class Recipe extends Model
 {
     use HasFactory;
     use Searchable;
+
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        return [
+            'id' => $array['id'],
+            'title' => $array['title'],
+            'body' => $array['body']
+        ];
+    }
 }
